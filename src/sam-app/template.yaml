@@ -9,36 +9,311 @@ Description: >
 Globals:
   Function:
     Timeout: 3
-
     Tracing: Active
   Api:
     TracingEnabled: true
 Resources:
-  HelloWorldFunction:
+  GenerateTrainingPlanLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: hello_world/
+      CodeUri: GenerateTrainingPlanLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
       - x86_64
       Events:
-        HelloWorld:
+        GetSystemStatus:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /hello
+            Path: /system/status
+            Method: get
+  GetAthleteBestPerformanceLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetAthleteBestPerformanceLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetAthleteLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetAthleteLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetAthleteTrainingContextLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetAthleteTrainingContextLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetAthleteTrainingPhasesLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetAthleteTrainingPhasesLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetAthleteWorkoutsLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetAthleteWorkoutsLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetSystemStatusLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetSystemStatusLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetTrainingPlanLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetTrainingPlanLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  GetWorkoutLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: GetWorkoutLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  SyncSystemLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: SyncSystemLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  SyncWorkoutLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: SyncWorkoutLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  UpdateTrainingPlanLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: UpdateTrainingPlanLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
+            Method: get
+  UploadFitFileLambda:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: UploadFitFileLambda/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+      Events:
+        GetSystemStatus:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /system/status
             Method: get
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldApi:
+  GenerateTrainingPlanApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-  HelloWorldFunction:
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GenerateTrainingPlanLambda:
     Description: Hello World Lambda Function ARN
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
+    Value: !GetAtt GenerateTrainingPlanLambda.Arn
+  GenerateTrainingPlanLambdaFunctionIamRole:
     Description: Implicit IAM Role created for Hello World function
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+    Value: !GetAtt GenerateTrainingPlanLambdaRole.Arn
+  GetAthleteBestPerformanceApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetAthleteBestPerformanceLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetAthleteBestPerformanceLambda.Arn
+  GetAthleteBestPerformanceLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetAthleteBestPerformanceLambdaRole.Arn
+  GetAthleteApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetAthleteLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetSystemStatusLambda.Arn
+  GetAthleteLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetSystemStatusLambdaRole.Arn
+  GetAthleteTrainingContextApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetAthleteTrainingContextLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetSystemStaGetAthleteTrainingContextLambdatusLambda.Arn
+  GetAthleteTrainingContextLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetAthleteTrainingContextLambdaRole.Arn
+  GetAthleteTrainingPhasesApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetAthleteTrainingPhasesLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetAthleteTrainingPhasesLambda.Arn
+  GetAthleteTrainingPhasesLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetAthleteTrainingPhasesLambdaRole.Arn
+  GetAthleteWorkoutsApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetAthleteWorkoutsLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetAthleteWorkoutsLambda.Arn
+  GetAthleteWorkoutsLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetAthleteWorkoutsLambdaRole.Arn
+  GetSystemStatusApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetSystemStatusLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetSystemStatusLambda.Arn
+  GetSystemStatusLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetSystemStatusLambdaRole.Arn
+  GetTrainingPlanApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetTrainingPlanLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetTrainingPlanLambda.Arn
+  GetTrainingPlanLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetTrainingPlanLambdaRole.Arn
+  GetWorkoutApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  GetWorkoutLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt GetWorkoutLambda.Arn
+  GetWorkoutLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt GetWorkoutLambdaRole.Arn
+  SyncSystemApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  SyncSystemLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt SyncSystemLambda.Arn
+  SyncSystemLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt SyncSystemLambdaRole.Arn
+  SyncWorkoutApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  SyncWorkoutLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt SyncWorkoutLambda.Arn
+  SyncWorkoutLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt SyncWorkoutLambdaRole.Arn
+  UpdateTrainingPlanApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  UpdateTrainingPlanLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt UpdateTrainingPlanLambda.Arn
+  UpdateTrainingPlanLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt UpdateTrainingPlanLambdaRole.Arn
+  UploadFitFileApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+  UploadFitFileLambda:
+    Description: Hello World Lambda Function ARN
+    Value: !GetAtt UploadFitFileLambda.Arn
+  UploadFitFileLambdaFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value: !GetAtt UploadFitFileLambdaRole.Arn

@@ -22,11 +22,11 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GenerateTrainingPlan:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
-            Method: get
+            Path: /training_plan/generate
+            Method: post
   GetAthleteBestPerformanceLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -36,10 +36,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetAthleteBestPerformance:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /athlete/{athlete_id}/best_performance
             Method: get
   GetAthleteLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -50,10 +50,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetAthlete:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /athlete/{athlete_id}
             Method: get
   GetAthleteTrainingContextLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -64,10 +64,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetAthleteTrainingContext:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /athlete/{athlete_id}/training_context
             Method: get
   GetAthleteTrainingPhasesLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -78,10 +78,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetAthleteTrainingPhases:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /athlete/{athlete_id}/training_phases
             Method: get
   GetAthleteWorkoutsLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -92,10 +92,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetAthleteWorkouts:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /athlete/{athlete_id}/workouts
             Method: get
   GetSystemStatusLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -120,10 +120,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetTrainingPlan:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /training_plan/{plan_id}
             Method: get
   GetWorkoutLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -134,10 +134,10 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        GetWorkout:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
+            Path: /workout/{workout_id}
             Method: get
   SyncSystemLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -148,11 +148,11 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        SyncSystem:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
-            Method: get
+            Path: /system/sync
+            Method: post
   SyncWorkoutLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -162,11 +162,11 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        SyncWorkout:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
-            Method: get
+            Path: /workout/sync
+            Method: post
   UpdateTrainingPlanLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -176,11 +176,11 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        UpdateTrainingPlan:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
-            Method: get
+            Path: /training_plan/{plan_id}/update
+            Method: post
   UploadFitFileLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -190,11 +190,11 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        GetSystemStatus:
+        UploadFitFile:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /system/status
-            Method: get
+            Path: /workout/upload
+            Method: post
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
@@ -202,7 +202,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   GenerateTrainingPlanApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/training_plan/generate/"
   GenerateTrainingPlanLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GenerateTrainingPlanLambda.Arn
@@ -211,7 +211,7 @@ Outputs:
     Value: !GetAtt GenerateTrainingPlanLambdaRole.Arn
   GetAthleteBestPerformanceApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/athlete/{athlete_id}/best_performance/"
   GetAthleteBestPerformanceLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetAthleteBestPerformanceLambda.Arn
@@ -220,7 +220,7 @@ Outputs:
     Value: !GetAtt GetAthleteBestPerformanceLambdaRole.Arn
   GetAthleteApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/athlete/{athlete_id}/"
   GetAthleteLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetSystemStatusLambda.Arn
@@ -229,7 +229,7 @@ Outputs:
     Value: !GetAtt GetSystemStatusLambdaRole.Arn
   GetAthleteTrainingContextApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/athlete/{athlete_id}/training_context/"
   GetAthleteTrainingContextLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetSystemStaGetAthleteTrainingContextLambdatusLambda.Arn
@@ -238,7 +238,7 @@ Outputs:
     Value: !GetAtt GetAthleteTrainingContextLambdaRole.Arn
   GetAthleteTrainingPhasesApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/athlete/{athlete_id}/training_phases/"
   GetAthleteTrainingPhasesLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetAthleteTrainingPhasesLambda.Arn
@@ -247,7 +247,7 @@ Outputs:
     Value: !GetAtt GetAthleteTrainingPhasesLambdaRole.Arn
   GetAthleteWorkoutsApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/athlete/{athlete_id}/workouts/"
   GetAthleteWorkoutsLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetAthleteWorkoutsLambda.Arn
@@ -265,7 +265,7 @@ Outputs:
     Value: !GetAtt GetSystemStatusLambdaRole.Arn
   GetTrainingPlanApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/training_plan/{plan_id}/"
   GetTrainingPlanLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetTrainingPlanLambda.Arn
@@ -274,7 +274,7 @@ Outputs:
     Value: !GetAtt GetTrainingPlanLambdaRole.Arn
   GetWorkoutApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/workout/{workout_id}/"
   GetWorkoutLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt GetWorkoutLambda.Arn
@@ -283,7 +283,7 @@ Outputs:
     Value: !GetAtt GetWorkoutLambdaRole.Arn
   SyncSystemApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/sync/"
   SyncSystemLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt SyncSystemLambda.Arn
@@ -292,7 +292,7 @@ Outputs:
     Value: !GetAtt SyncSystemLambdaRole.Arn
   SyncWorkoutApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/workout/sync/"
   SyncWorkoutLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt SyncWorkoutLambda.Arn
@@ -301,7 +301,7 @@ Outputs:
     Value: !GetAtt SyncWorkoutLambdaRole.Arn
   UpdateTrainingPlanApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/training_plan/{plan_id}/update/"
   UpdateTrainingPlanLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt UpdateTrainingPlanLambda.Arn
@@ -310,7 +310,7 @@ Outputs:
     Value: !GetAtt UpdateTrainingPlanLambdaRole.Arn
   UploadFitFileApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/system/status/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/workout/upload/"
   UploadFitFileLambda:
     Description: Hello World Lambda Function ARN
     Value: !GetAtt UploadFitFileLambda.Arn

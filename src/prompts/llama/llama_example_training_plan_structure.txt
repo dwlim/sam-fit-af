@@ -1,0 +1,63 @@
+{
+    "training_plan": {
+        "duration_weeks": 2,
+        "weekly_structure": [
+            {
+                "week": 1,
+                "area_of_focus": "Aerobic development",
+                "total_distance_km": 15,
+                "total_time_minutes": 110,
+                "days": [
+                    {
+                        "day": "Tuesday",
+                        "workout": {
+                            "type": "Run",
+                            "description": "Easy pace, 5 km at 5:00/km to 5:30/km",
+                            "duration_minutes": 35,
+                            "tag": "recovery",
+                            "distance_km": 5
+                        }
+                    },
+                    {
+                        "day": "Saturday",
+                        "workout": {
+                            "type": "Run",
+                            "description": "Long slow distance, 10 km at 5:15/km to 5:45/km",
+                            "duration_minutes": 75,
+                            "tag": "long_run",
+                            "distance_km": 10
+                        }
+                    }
+                ]
+            },
+            {
+                "week": 2,
+                "area_of_focus": "VO2max development",
+                "total_distance_km": 14,
+                "total_time_minutes": 105,
+                "days": [
+                    {
+                        "day": "Tuesday",
+                        "workout": {
+                            "type": "Run",
+                            "description": "Intervals, 2k warmup, 4x800m at 4:00/km to 4:10/km with 1:00 rest between each, 2k cool down.",
+                            "duration_minutes": 30,
+                            "tag": "vo2max",
+                            "distance_km": 4
+                        }
+                    },
+                    {
+                        "day": "Saturday",
+                        "workout": {
+                            "type": "Run",
+                            "description": "Moderate pace, 2km warmup, 10 km at 4:40/km to 4:50/km, 2km cool down.",
+                            "duration_minutes": 85,
+                            "tag": "aerobic",
+                            "distance_km": 10
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

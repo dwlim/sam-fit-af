@@ -16,7 +16,7 @@ Resources:
   GenerateTrainingPlanLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GenerateTrainingPlanLambda/
+      CodeUri: ./lambda/GenerateTrainingPlanLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -30,7 +30,7 @@ Resources:
   GetAthleteBestPerformanceLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetAthleteBestPerformanceLambda/
+      CodeUri: ./lambda/GetAthleteBestPerformanceLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -44,7 +44,7 @@ Resources:
   GetAthleteLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetAthleteLambda/
+      CodeUri: ./lambda/GetAthleteLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -58,7 +58,7 @@ Resources:
   GetAthleteTrainingContextLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetAthleteTrainingContextLambda/
+      CodeUri: ./lambda/GetAthleteTrainingContextLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -72,7 +72,7 @@ Resources:
   GetAthleteTrainingPhasesLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetAthleteTrainingPhasesLambda/
+      CodeUri: ./lambda/GetAthleteTrainingPhasesLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -86,7 +86,7 @@ Resources:
   GetAthleteWorkoutsLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetAthleteWorkoutsLambda/
+      CodeUri: ./lambda/GetAthleteWorkoutsLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -100,7 +100,7 @@ Resources:
   GetSystemStatusLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetSystemStatusLambda/
+      CodeUri: ./lambda/GetSystemStatusLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -114,7 +114,7 @@ Resources:
   GetTrainingPlanLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetTrainingPlanLambda/
+      CodeUri: ./lambda/GetTrainingPlanLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -128,7 +128,7 @@ Resources:
   GetWorkoutLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/GetWorkoutLambda/
+      CodeUri: ./lambda/GetWorkoutLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -142,7 +142,7 @@ Resources:
   SyncSystemLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/SyncSystemLambda/
+      CodeUri: ./lambda/SyncSystemLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -156,7 +156,7 @@ Resources:
   SyncWorkoutLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/SyncWorkoutLambda/
+      CodeUri: ./lambda/SyncWorkoutLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -170,7 +170,7 @@ Resources:
   UpdateTrainingPlanLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/UpdateTrainingPlanLambda/
+      CodeUri: ./lambda/UpdateTrainingPlanLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:
@@ -184,7 +184,7 @@ Resources:
   UploadFitFileLambda:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Lambdas/UploadFitFileLambda/
+      CodeUri: ./lambda/UploadFitFileLambda/
       Handler: app.lambda_handler
       Runtime: python3.13
       Architectures:

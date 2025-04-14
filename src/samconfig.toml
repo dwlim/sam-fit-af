@@ -6,7 +6,7 @@ version = 0.1
 stack_name = "sam-app"
 
 [default.build.parameters]
-cached = true
+cached = false
 parallel = true
 
 [default.validate.parameters]
